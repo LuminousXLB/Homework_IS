@@ -6,7 +6,7 @@ def Bezout(a, b):
     while True:
         t = [f[1]//l[1], f[1] % l[1]]
         if t[1] == 0:
-            return l[2], l[3]  # s,t
+            return l[2], l[3], l[1]  # s, t, gcd
         else:
             t.extend([-t[0] * l[2] + f[2], -t[0] * l[3] + f[3]])
             f, l = l, t
