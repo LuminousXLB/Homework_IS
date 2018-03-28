@@ -9,16 +9,25 @@ def power(a, n):
     else:
         rec = [1]*(n+1)
         rec[1] = a
-        p = 0
-        while p < n:
-            d = 1
-            rec[p+1] = rec[p]*rec[1]
-            while p+2*d < n:
-                rec[p+2*d] = rec[p]*rec[d]*rec[d]
-                d = 2*d
-                print('wtf {}'.format(p+2*d))
-            p = p+d
-        return rec[n]
+        # p = 0
+        # while p < n:
+        #     d = 1
+        #     rec[p+1] = rec[p]*rec[1]
+        #     while p+2*d < n:
+        #         rec[p+2*d] = rec[p]*rec[d]*rec[d]
+        #         d = 2*d
+        #         print('wtf {}'.format(p+2*d))
+        #     p = p+d
+        p = 1
+        while 2*p < n:
+            rec[2*p] = rec[p]*rec[p]
+            p = 2*p
+            print(p, n-p)
+        if p == n:
+            return rec[n]
+        else:
+            return rec[p]*power(a, n-p)
+        # return rec[n]
 
 
 def main():
