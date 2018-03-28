@@ -5,10 +5,6 @@ def isCoprime(n1, n2):
     return n1 == 1
 
 
-def main():
+if __name__ == '__main__':
     print(isCoprime(2, 3))
     print(isCoprime(12, 18))
-
-
-if __name__ == '__main__':
-    main()
