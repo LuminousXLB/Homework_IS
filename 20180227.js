@@ -23,7 +23,8 @@ function PrimeList(max = 10000) {
   var sup = parseInt(Math.sqrt(max) + 1)
 
   for (var i = 3; i <= sup; i += 2) {
-    if (arr[i]) {continue;
+    if (arr[i]) {
+      continue;
     } else {
       for (var j = 3; i * j <= max; j += 2) {
         arr[i * j] = true;

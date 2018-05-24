@@ -45,4 +45,4 @@ def MPolynomial(x, polynomial, modulus):
 
 
 if __name__ == '__main__':
-    print(MFactorial(1000000000, 1000000001))
+    print(MPower(2, 192, 7)-MPower(2, 64, 7)+MPower(2, 5, 7)+MPower(2, 4, 7)-1)
