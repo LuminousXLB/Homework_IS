@@ -1,37 +1,22 @@
-def power(a, n):
-    print('power({},{})'.format(a, n))
-    if a == 0:
-        return 0
-    elif a == 1 or n == 0:
+def power(base, exp):
+    if base == 1 or exp == 0:
         return 1
-    elif n == 1:
-        return a
+    elif base == 0:
+        return 0
+    elif exp == 1:
+        return base
     else:
-        rec = [1]*(n+1)
-        rec[1] = a
-        # p = 0
-        # while p < n:
-        #     d = 1
-        #     rec[p+1] = rec[p]*rec[1]
-        #     while p+2*d < n:
-        #         rec[p+2*d] = rec[p]*rec[d]*rec[d]
-        #         d = 2*d
-        #         print('wtf {}'.format(p+2*d))
-        #     p = p+d
-        p = 1
-        while 2*p < n:
-            rec[2*p] = rec[p]*rec[p]
-            p = 2*p
-            print(p, n-p)
-        if p == n:
-            return rec[n]
+        p = power(base, exp//2)
+        if exp % 2 == 0:
+            return p*p
         else:
-            return rec[p]*power(a, n-p)
-        # return rec[n]
+            return p*p*base
 
 
 def main():
-    print(power(2, 14))
+    base = 0
+    expo = 0
+    print(base**expo, power(base, expo))
     # for i in range(1, 20):
 
 

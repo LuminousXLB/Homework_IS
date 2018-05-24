@@ -10,3 +10,7 @@ def Bezout(a, b):
         else:
             t.extend([-t[0] * l[2] + f[2], -t[0] * l[3] + f[3]])
             f, l = l, t
+
+
+if __name__ == '__main__':
+    print(Bezout(343, 7))

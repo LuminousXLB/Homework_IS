@@ -13,20 +13,23 @@ def EulerPrime(p, alpha=1):
 
 def Euler(num):
     fact = factorize(num)
-    pool = {}
     euler = 1
-    for prime in fact:
-        if prime in pool:
-            pool[prime] += 1
-        else:
-            pool[prime] = 1
-    for key in pool.keys():
-        euler *= EulerPrime(key, pool[key])
+    if len(fact) == 0:
+        euler = EulerPrime(num)
+    else:
+        pool = {}
+        for prime in fact:
+            if prime in pool:
+                pool[prime] += 1
+            else:
+                pool[prime] = 1
+        for key in pool.keys():
+            euler *= EulerPrime(key, pool[key])
     return euler
 
 
 def main():
-    print(Euler(32760))
+    print(Euler(7))
 
 
 if __name__ == '__main__':

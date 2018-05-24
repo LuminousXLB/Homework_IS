@@ -14,6 +14,6 @@ def factorize(n):
 
 
 if __name__ == '__main__':
-    N = 2*2*4*6*123*4325
+    N = 11
     fact = factorize(N)
     print('N = {}\nfact = {}'.format(N, fact))
