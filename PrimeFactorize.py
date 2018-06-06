@@ -10,10 +10,12 @@ def factorize(n):
         while n % p == 0:
             fact.append(p)
             n //= p
+    if n > 1:
+        fact.append(n)
     return fact
 
 
 if __name__ == '__main__':
-    N = 11
+    N = 166
     fact = factorize(N)
     print('N = {}\nfact = {}'.format(N, fact))

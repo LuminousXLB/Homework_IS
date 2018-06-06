@@ -13,4 +13,4 @@ def Bezout(a, b):
 
 
 if __name__ == '__main__':
-    print(Bezout(343, 7))
+    print(Bezout(0, 16))

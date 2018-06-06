@@ -29,7 +29,7 @@ def Euler(num):
 
 
 def main():
-    print(Euler(7))
+    print(Euler(77))
 
 
 if __name__ == '__main__':
