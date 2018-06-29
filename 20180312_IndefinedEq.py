@@ -18,7 +18,8 @@ def solve(a, b, c):
     # ax + by = c
     s, t, gcd = Bezout(int(a), int(b))
     if c % gcd != 0:
-        raise('No Solution')
+        raise Exception("No Solution")
+        
     Special = (s*int(c)//gcd, t*int(c)//gcd)
     General = (
         '{} - t * {}'.format(Special[0], b//gcd),
@@ -28,7 +29,7 @@ def solve(a, b, c):
 
 
 def main():
-    s, g = solve(7, 4, 100)
+    s, g = solve(77, 63, 40)
     print(s, g)
 
 

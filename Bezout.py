@@ -12,5 +12,21 @@ def Bezout(a, b):
             f, l = l, t
 
 
+def myBezout(a, b):
+    q, r = a//b, a % b
+    s, t, u, v = 0, 1, 1, -q
+    while r != 0:
+        a, b = b, r
+        q, r = a//b, a % b
+        s, t, u, v = u, v, s-u*q, t-v*q
+    return s, t, b
+
+
 if __name__ == '__main__':
-    print(Bezout(0, 16))
+    from random import randint
+    a = randint(0xF00FFFFFFFFFFFFF, 0xFFFFFFFFFFFFFFFF)
+    b = randint(0xF00FFFFFFFFFFFFF, 0xFFFFFFFFFFFFFFFF)
+    print(a, b)
+    # a, b = 1234567894534521234360, 912341233871234654321
+    print(myBezout(a, b))
+    print(Bezout(a, b))
