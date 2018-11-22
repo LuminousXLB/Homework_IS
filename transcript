@@ -1,0 +1,901 @@
+# Reading C:/Modeltech_pe_edu_10.4a/tcl/vsim/pref.tcl
+# //  ModelSim PE Student Edition 10.4a Apr  7 2015 
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
+# vsim -gui . 
+# Start time: 10:53:35 on Nov 22,2018
+# ** Error: (vsim-19) Failed to access library '' at "".
+# 
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# Loading project DSD_Project
+# Compile of wavgen.v was successful.
+vsim -gui work.wavgen
+# vsim 
+# Start time: 11:04:04 on Nov 22,2018
+# Loading work.wavgen
+add wave -position insertpoint  \
+sim:/wavgen/out
+run 40
+run 500
+# Compile of wavgen.v was successful.
+restart
+# Loading work.wavgen
+run 500
+#                    0out = 0
+#                    2out = 1
+#                    3out = 0
+#                   12out = 1
+#                   22out = 0
+#                   24out = 1
+#                   27out = 0
+#                   32out = 1
+# Compile of Encoder8x3.v failed with 1 errors.
+# Compile of tb_Encoder8x3.v failed with 3 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Compile of Encoder8x3.v failed with 1 errors.
+# Compile of Encoder8x3.v failed with 1 errors.
+# Compile of Encoder8x3.v was successful.
+# Compile of tb_Encoder8x3.v was successful.
+vsim -gui work.tb_Encoder8x3
+# vsim 
+# Start time: 11:24:35 on Nov 22,2018
+# Loading work.tb_Encoder8x3
+# Loading work.Encoder8x3
+# ** Error (suppressible): (vsim-PLI-3071) E:/CourseProject/DSD_Project/tb_Encoder8x3.v(18): $monitor : Too few arguments.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_Encoder8x3 File: E:/CourseProject/DSD_Project/tb_Encoder8x3.v
+# Error loading design
+vsim work.tb_Encoder8x3
+# vsim 
+# Start time: 11:24:42 on Nov 22,2018
+# Loading work.tb_Encoder8x3
+# Loading work.Encoder8x3
+# ** Error (suppressible): (vsim-PLI-3071) E:/CourseProject/DSD_Project/tb_Encoder8x3.v(18): $monitor : Too few arguments.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_Encoder8x3 File: E:/CourseProject/DSD_Project/tb_Encoder8x3.v
+# Error loading design
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_Encoder8x3.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:25:15 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_Encoder8x3.v 
+# -- Compiling module Encoder8x3
+# -- Compiling module tb_Encoder8x3
+# 
+# Top level modules:
+# 	tb_Encoder8x3
+# End time: 11:25:15 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_Encoder8x3
+# vsim 
+# Start time: 11:25:18 on Nov 22,2018
+# Loading work.tb_Encoder8x3
+# Loading work.Encoder8x3
+add wave -position insertpoint  \
+sim:/tb_Encoder8x3/data \
+sim:/tb_Encoder8x3/code
+run
+run
+run
+# Compile of Encoder8x3.v was successful.
+# Compile of tb_Encoder8x3.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_Encoder8x3
+# vsim 
+# Start time: 11:27:01 on Nov 22,2018
+# Loading work.tb_Encoder8x3
+# Loading work.Encoder8x3
+add wave -position insertpoint  \
+sim:/tb_Encoder8x3/data \
+sim:/tb_Encoder8x3/code
+run
+run 500
+#                    0	code =      000	out = 01
+#                    5	code =      001	out = 10
+#                   10	code =      010	out = 100
+#                   15	code =      011	out = 1000
+#                   20	code =      100	out = 10000
+#                   25	code =      101	out = 100000
+#                   30	code =      110	out = 1000000
+#                   35	code =      111	out = 10000000
+#                   40	code =      0xx	out = 00
+# Compile of tb_Encoder8x3.v was successful.
+# Compile of Encoder8x3.v was successful.
+# Compile of tb_Encoder8x3.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_Encoder8x3
+# vsim 
+# Start time: 11:28:31 on Nov 22,2018
+# Loading work.tb_Encoder8x3
+# Loading work.Encoder8x3
+run 500
+#                    0	data = 00000001	code = 00
+#                    5	data = 00000010	code = 01
+#                   10	data = 00000100	code = 10
+#                   15	data = 00001000	code = 11
+#                   20	data = 00010000	code = 100
+#                   25	data = 00100000	code = 101
+#                   30	data = 01000000	code = 110
+#                   35	data = 10000000	code = 111
+#                   40	data = 00000000	code = 0xx
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_Encoder8x3.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:29:09 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_Encoder8x3.v 
+# -- Compiling module Encoder8x3
+# -- Compiling module tb_Encoder8x3
+# 
+# Top level modules:
+# 	tb_Encoder8x3
+# End time: 11:29:09 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/Encoder8x3.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:29:11 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/Encoder8x3.v 
+# -- Compiling module Encoder8x3
+# 
+# Top level modules:
+# 	Encoder8x3
+# End time: 11:29:11 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_Encoder8x3
+# vsim 
+# Start time: 11:29:14 on Nov 22,2018
+# Loading work.tb_Encoder8x3
+# Loading work.Encoder8x3
+run 500
+#                    0	data = 00000001	code = 000
+#                    5	data = 00000010	code = 001
+#                   10	data = 00000100	code = 010
+#                   15	data = 00001000	code = 011
+#                   20	data = 00010000	code = 100
+#                   25	data = 00100000	code = 101
+#                   30	data = 01000000	code = 110
+#                   35	data = 10000000	code = 111
+#                   40	data = 00000000	code = xxx
+# Compile of mux2x1.v was successful.
+# Compile of tb_mux2x1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_mux2x1
+# vsim 
+# Start time: 11:37:20 on Nov 22,2018
+# Loading work.tb_mux2x1
+# Loading work.mux2x1
+# ** Error: (vsim-3043) E:/CourseProject/DSD_Project/tb_mux2x1.v(18): Unresolved reference to 'code'.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_mux2x1 File: E:/CourseProject/DSD_Project/tb_mux2x1.v
+# ** Error: (vsim-3043) E:/CourseProject/DSD_Project/tb_mux2x1.v(18): Unresolved reference to 'data'.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_mux2x1 File: E:/CourseProject/DSD_Project/tb_mux2x1.v
+# Error loading design
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_mux2x1.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:38:17 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_mux2x1.v 
+# -- Compiling module mux2x1
+# -- Compiling module tb_mux2x1
+# 
+# Top level modules:
+# 	tb_mux2x1
+# End time: 11:38:17 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_mux2x1
+# vsim 
+# Start time: 11:38:19 on Nov 22,2018
+# Loading work.tb_mux2x1
+# Loading work.mux2x1
+add wave -position insertpoint  \
+sim:/tb_mux2x1/sel \
+sim:/tb_mux2x1/din \
+sim:/tb_mux2x1/dout
+run 200
+#                    0	sel = 0	din = 0	dout = z
+#                    5	sel = 0	din = 1	dout = z
+#                   10	sel = 1	din = 0	dout = z
+#                   15	sel = 1	din = 1	dout = z
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux2x1.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:40:37 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux2x1.v 
+# -- Compiling module mux2x1
+# 
+# Top level modules:
+# 	mux2x1
+# End time: 11:40:37 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_mux2x1.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:40:37 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_mux2x1.v 
+# -- Compiling module mux2x1
+# -- Compiling module tb_mux2x1
+# ** Error: (vlog-13069) E:\CourseProject\DSD_Project\tb_mux2x1.v(6): near "[": syntax error, unexpected '[', expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# 
+# ** Error: E:\CourseProject\DSD_Project\tb_mux2x1.v(10): (vlog-2730) Undefined variable: 'din'.
+# 
+# End time: 11:40:37 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_mux2x1.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:41:02 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_mux2x1.v 
+# -- Compiling module mux2x1
+# -- Compiling module tb_mux2x1
+# 
+# Top level modules:
+# 	tb_mux2x1
+# End time: 11:41:02 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_mux2x1
+# vsim 
+# Start time: 11:41:07 on Nov 22,2018
+# Loading work.tb_mux2x1
+# Loading work.mux2x1
+add wave -position insertpoint  \
+sim:/tb_mux2x1/sel \
+sim:/tb_mux2x1/din \
+sim:/tb_mux2x1/dout
+run 500
+#                    0	sel = 0	din = 00	dout = 0
+#                    5	sel = 0	din = 01	dout = z
+#                   10	sel = 0	din = 10	dout = 0
+#                   15	sel = 0	din = 11	dout = 0
+#                   20	sel = 1	din = 00	dout = 1
+#                   25	sel = 1	din = 01	dout = z
+#                   30	sel = 1	din = 10	dout = 1
+#                   35	sel = 1	din = 11	dout = 1
+#                   40	sel = 0	din = 00	dout = 0
+#                   45	sel = 0	din = 01	dout = z
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux2x1.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:42:17 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux2x1.v 
+# -- Compiling module mux2x1
+# 
+# Top level modules:
+# 	mux2x1
+# End time: 11:42:17 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_mux2x1
+# vsim 
+# Start time: 11:42:21 on Nov 22,2018
+# Loading work.tb_mux2x1
+# Loading work.mux2x1
+add wave -position insertpoint  \
+sim:/tb_mux2x1/sel \
+sim:/tb_mux2x1/din \
+sim:/tb_mux2x1/dout
+run 500
+#                    0	sel = 0	din = 00	dout = 0
+#                    5	sel = 0	din = 01	dout = 1
+#                   10	sel = 0	din = 10	dout = 0
+#                   15	sel = 0	din = 11	dout = 1
+#                   20	sel = 1	din = 00	dout = 0
+#                   25	sel = 1	din = 01	dout = 0
+#                   30	sel = 1	din = 10	dout = 1
+#                   35	sel = 1	din = 11	dout = 1
+#                   40	sel = 0	din = 00	dout = 0
+#                   45	sel = 0	din = 01	dout = 1
+# Compile of mux2x1.v was successful.
+# Compile of tb_mux2x1.v was successful.
+# Compile of mux4x1.v was successful.
+# Compile of tb_mux4x1.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb_mux4x1
+# vsim 
+# Start time: 11:48:39 on Nov 22,2018
+# Loading work.tb_mux4x1
+# Loading work.mux4x1
+# Loading work.mux2x1
+add wave -position insertpoint  \
+sim:/tb_mux4x1/sel \
+sim:/tb_mux4x1/din \
+sim:/tb_mux4x1/dout
+run 1000
+#                    0	sel = 00	din = 0000	dout = 0
+#                    5	sel = 00	din = 0001	dout = 1
+#                   10	sel = 00	din = 0010	dout = 0
+#                   15	sel = 00	din = 0011	dout = 1
+#                   20	sel = 00	din = 0100	dout = 0
+#                   25	sel = 00	din = 0101	dout = 1
+#                   30	sel = 00	din = 0110	dout = 0
+#                   35	sel = 00	din = 0111	dout = 1
+#                   40	sel = 00	din = 1000	dout = 0
+#                   45	sel = 00	din = 1001	dout = 1
+#                   50	sel = 00	din = 1010	dout = 0
+#                   55	sel = 00	din = 1011	dout = 1
+#                   60	sel = 00	din = 1100	dout = 0
+#                   65	sel = 00	din = 1101	dout = 1
+#                   70	sel = 00	din = 1110	dout = 0
+#                   75	sel = 00	din = 1111	dout = 1
+#                   80	sel = 01	din = 0000	dout = 0
+#                   85	sel = 01	din = 0001	dout = 0
+#                   90	sel = 01	din = 0010	dout = 1
+#                   95	sel = 01	din = 0011	dout = 1
+run 3200
+#                  100	sel = 01	din = 0100	dout = 0
+#                  105	sel = 01	din = 0101	dout = 0
+#                  110	sel = 01	din = 0110	dout = 1
+#                  115	sel = 01	din = 0111	dout = 1
+#                  120	sel = 01	din = 1000	dout = 0
+#                  125	sel = 01	din = 1001	dout = 0
+#                  130	sel = 01	din = 1010	dout = 1
+#                  135	sel = 01	din = 1011	dout = 1
+#                  140	sel = 01	din = 1100	dout = 0
+#                  145	sel = 01	din = 1101	dout = 0
+#                  150	sel = 01	din = 1110	dout = 1
+#                  155	sel = 01	din = 1111	dout = 1
+#                  160	sel = 10	din = 0000	dout = 0
+#                  165	sel = 10	din = 0001	dout = 1
+#                  170	sel = 10	din = 0010	dout = 0
+#                  175	sel = 10	din = 0011	dout = 1
+#                  180	sel = 10	din = 0100	dout = 0
+#                  185	sel = 10	din = 0101	dout = 1
+#                  190	sel = 10	din = 0110	dout = 0
+#                  195	sel = 10	din = 0111	dout = 1
+#                  200	sel = 10	din = 1000	dout = 0
+#                  205	sel = 10	din = 1001	dout = 1
+#                  210	sel = 10	din = 1010	dout = 0
+#                  215	sel = 10	din = 1011	dout = 1
+#                  220	sel = 10	din = 1100	dout = 0
+#                  225	sel = 10	din = 1101	dout = 1
+#                  230	sel = 10	din = 1110	dout = 0
+#                  235	sel = 10	din = 1111	dout = 1
+#                  240	sel = 11	din = 0000	dout = 0
+#                  245	sel = 11	din = 0001	dout = 0
+#                  250	sel = 11	din = 0010	dout = 1
+#                  255	sel = 11	din = 0011	dout = 1
+#                  260	sel = 11	din = 0100	dout = 0
+#                  265	sel = 11	din = 0101	dout = 0
+#                  270	sel = 11	din = 0110	dout = 1
+#                  275	sel = 11	din = 0111	dout = 1
+#                  280	sel = 11	din = 1000	dout = 0
+#                  285	sel = 11	din = 1001	dout = 0
+#                  290	sel = 11	din = 1010	dout = 1
+#                  295	sel = 11	din = 1011	dout = 1
+#                  300	sel = 11	din = 1100	dout = 0
+#                  305	sel = 11	din = 1101	dout = 0
+#                  310	sel = 11	din = 1110	dout = 1
+#                  315	sel = 11	din = 1111	dout = 1
+#                  320	sel = 00	din = 0000	dout = 0
+#                  325	sel = 00	din = 0001	dout = 1
+#                  330	sel = 00	din = 0010	dout = 0
+#                  335	sel = 00	din = 0011	dout = 1
+#                  340	sel = 00	din = 0100	dout = 0
+#                  345	sel = 00	din = 0101	dout = 1
+#                  350	sel = 00	din = 0110	dout = 0
+#                  355	sel = 00	din = 0111	dout = 1
+#                  360	sel = 00	din = 1000	dout = 0
+#                  365	sel = 00	din = 1001	dout = 1
+#                  370	sel = 00	din = 1010	dout = 0
+#                  375	sel = 00	din = 1011	dout = 1
+#                  380	sel = 00	din = 1100	dout = 0
+#                  385	sel = 00	din = 1101	dout = 1
+#                  390	sel = 00	din = 1110	dout = 0
+#                  395	sel = 00	din = 1111	dout = 1
+#                  400	sel = 01	din = 0000	dout = 0
+#                  405	sel = 01	din = 0001	dout = 0
+#                  410	sel = 01	din = 0010	dout = 1
+#                  415	sel = 01	din = 0011	dout = 1
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux4x1.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 11:50:20 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux4x1.v 
+# -- Compiling module mux2x1
+# -- Compiling module mux4x1
+# 
+# Top level modules:
+# 	mux4x1
+# End time: 11:50:20 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_mux4x1
+# vsim 
+# Start time: 11:50:24 on Nov 22,2018
+# Loading work.tb_mux4x1
+# Loading work.mux4x1
+# Loading work.mux2x1
+add wave -position insertpoint sim:/tb_mux4x1/*
+run 3200
+#                    0	sel = 00	din = 0000	dout = 0
+#                    5	sel = 00	din = 0001	dout = 1
+#                   10	sel = 00	din = 0010	dout = 0
+#                   15	sel = 00	din = 0011	dout = 1
+#                   20	sel = 00	din = 0100	dout = 0
+#                   25	sel = 00	din = 0101	dout = 1
+#                   30	sel = 00	din = 0110	dout = 0
+#                   35	sel = 00	din = 0111	dout = 1
+#                   40	sel = 00	din = 1000	dout = 0
+#                   45	sel = 00	din = 1001	dout = 1
+#                   50	sel = 00	din = 1010	dout = 0
+#                   55	sel = 00	din = 1011	dout = 1
+#                   60	sel = 00	din = 1100	dout = 0
+#                   65	sel = 00	din = 1101	dout = 1
+#                   70	sel = 00	din = 1110	dout = 0
+#                   75	sel = 00	din = 1111	dout = 1
+#                   80	sel = 01	din = 0000	dout = 0
+#                   85	sel = 01	din = 0001	dout = 0
+#                   90	sel = 01	din = 0010	dout = 1
+#                   95	sel = 01	din = 0011	dout = 1
+#                  100	sel = 01	din = 0100	dout = 0
+#                  105	sel = 01	din = 0101	dout = 0
+#                  110	sel = 01	din = 0110	dout = 1
+#                  115	sel = 01	din = 0111	dout = 1
+#                  120	sel = 01	din = 1000	dout = 0
+#                  125	sel = 01	din = 1001	dout = 0
+#                  130	sel = 01	din = 1010	dout = 1
+#                  135	sel = 01	din = 1011	dout = 1
+#                  140	sel = 01	din = 1100	dout = 0
+#                  145	sel = 01	din = 1101	dout = 0
+#                  150	sel = 01	din = 1110	dout = 1
+#                  155	sel = 01	din = 1111	dout = 1
+#                  160	sel = 10	din = 0000	dout = 0
+#                  165	sel = 10	din = 0001	dout = 0
+#                  170	sel = 10	din = 0010	dout = 0
+#                  175	sel = 10	din = 0011	dout = 0
+#                  180	sel = 10	din = 0100	dout = 1
+#                  185	sel = 10	din = 0101	dout = 1
+#                  190	sel = 10	din = 0110	dout = 1
+#                  195	sel = 10	din = 0111	dout = 1
+#                  200	sel = 10	din = 1000	dout = 0
+#                  205	sel = 10	din = 1001	dout = 0
+#                  210	sel = 10	din = 1010	dout = 0
+#                  215	sel = 10	din = 1011	dout = 0
+#                  220	sel = 10	din = 1100	dout = 1
+#                  225	sel = 10	din = 1101	dout = 1
+#                  230	sel = 10	din = 1110	dout = 1
+#                  235	sel = 10	din = 1111	dout = 1
+#                  240	sel = 11	din = 0000	dout = 0
+#                  245	sel = 11	din = 0001	dout = 0
+#                  250	sel = 11	din = 0010	dout = 0
+#                  255	sel = 11	din = 0011	dout = 0
+#                  260	sel = 11	din = 0100	dout = 0
+#                  265	sel = 11	din = 0101	dout = 0
+#                  270	sel = 11	din = 0110	dout = 0
+#                  275	sel = 11	din = 0111	dout = 0
+#                  280	sel = 11	din = 1000	dout = 1
+#                  285	sel = 11	din = 1001	dout = 1
+#                  290	sel = 11	din = 1010	dout = 1
+#                  295	sel = 11	din = 1011	dout = 1
+#                  300	sel = 11	din = 1100	dout = 1
+#                  305	sel = 11	din = 1101	dout = 1
+#                  310	sel = 11	din = 1110	dout = 1
+#                  315	sel = 11	din = 1111	dout = 1
+run 5
+#                  320	sel = 00	din = 0000	dout = 0
+project addfolder 3
+project addfolder 4
+project addfolder 5
+project addfolder 6
+project addfolder 7
+project addfolder 8
+project addfolder 9
+project addfolder 10
+project addfolder 11
+project addfolder 12
+project addfolder 13
+project addfolder a
+project addfolder b
+project addfolder c
+project addfolder d
+project addfolder e
+project addfolder e
+# The Folder name entered already exists.
+project addfolder f
+project addfolder g
+project addfile 1/wavegen.v 1
+project addfile 3/*.v 3
+# Error opening E:\CourseProject\DSD_Project\1\wavegen.v
+# Path name 'E:\CourseProject\DSD_Project\1\wavegen.v' doesn't exist.
+# Compile of comb_behavior.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_str.v failed with 1 errors.
+# Compile of testbench_comb.v failed with 5 errors.
+# 4 compiles, 4 failed with 16 errors.
+# Compile of comb_str.v failed with 1 errors.
+vlog -work E:/CourseProject/DSD_Project/work -refresh -force_refresh
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:38 on Nov 22,2018
+# vlog -reportprogress 300 -work E:/CourseProject/DSD_Project/work -refresh -force_refresh 
+# -- Refreshing module Encoder8x3
+# -- Refreshing module mux2x1
+# -- Refreshing module mux4x1
+# -- Refreshing module tb_Encoder8x3
+# -- Refreshing module tb_mux2x1
+# -- Refreshing module tb_mux4x1
+# -- Refreshing module wavgen
+# End time: 12:20:38 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work E:/CourseProject/DSD_Project/work -refresh -force_refresh
+# Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:38 on Nov 22,2018
+# vcom -reportprogress 300 -work E:/CourseProject/DSD_Project/work -refresh -force_refresh 
+# -- Skipping module Encoder8x3
+# -- Skipping module mux2x1
+# -- Skipping module mux4x1
+# -- Skipping module tb_Encoder8x3
+# -- Skipping module tb_mux2x1
+# -- Skipping module tb_mux4x1
+# -- Skipping module wavgen
+# End time: 12:20:38 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/Encoder8x3.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:48 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/Encoder8x3.v 
+# ** Error: (vlog-7) Failed to open design unit file "E:/CourseProject/DSD_Project/Encoder8x3.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 12:20:48 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux2x1.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:48 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux2x1.v 
+# ** Error: (vlog-7) Failed to open design unit file "E:/CourseProject/DSD_Project/mux2x1.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 12:20:48 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux4x1.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:48 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/mux4x1.v 
+# ** Error: (vlog-7) Failed to open design unit file "E:/CourseProject/DSD_Project/mux4x1.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 12:20:48 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_Encoder8x3.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:48 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_Encoder8x3.v 
+# ** Error: (vlog-7) Failed to open design unit file "E:\CourseProject\DSD_Project\tb_Encoder8x3.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 12:20:48 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_mux2x1.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:48 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_mux2x1.v 
+# ** Error: (vlog-7) Failed to open design unit file "E:\CourseProject\DSD_Project\tb_mux2x1.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 12:20:48 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\tb_mux4x1.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:48 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\tb_mux4x1.v 
+# ** Error: (vlog-7) Failed to open design unit file "E:\CourseProject\DSD_Project\tb_mux4x1.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 12:20:48 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 {E:\CourseProject\DSD_Project\wavgen.v}
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:20:49 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:\CourseProject\DSD_Project\wavgen.v 
+# ** Error: (vlog-7) Failed to open design unit file "E:\CourseProject\DSD_Project\wavgen.v" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 12:20:49 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# C:/Modeltech_pe_edu_10.4a/win32pe_edu/vlog failed.
+# Compile of Encoder8x3.v was successful.
+# Compile of tb_Encoder8x3.v was successful.
+# Compile of wavgen.v was successful.
+# Compile of mux2x1.v was successful.
+# Compile of mux4x1.v was successful.
+# Compile of tb_mux2x1.v was successful.
+# Compile of tb_mux4x1.v was successful.
+# 7 compiles, 0 failed with no errors.
+# Compile of comb_str.v failed with 1 errors.
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/1/wavgen.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:23:11 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/1/wavgen.v 
+# -- Compiling module wavgen
+# 
+# Top level modules:
+# 	wavgen
+# End time: 12:23:11 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.wavgen
+# vsim 
+# Start time: 12:23:15 on Nov 22,2018
+# Loading work.wavgen
+run 500
+#                    0out = 0
+#                    2out = 1
+#                    3out = 0
+#                   12out = 1
+#                   22out = 0
+#                   24out = 1
+#                   27out = 0
+#                   32out = 1
+# Compile of comb_behavior.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_str.v was successful.
+# Compile of testbench_comb.v failed with 5 errors.
+# 4 compiles, 3 failed with 15 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of testbench_comb.v failed with 5 errors.
+# Load canceled
+vlog -work E:/CourseProject/DSD_Project/work -refresh -force_refresh
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:33:40 on Nov 22,2018
+# vlog -reportprogress 300 -work E:/CourseProject/DSD_Project/work -refresh -force_refresh 
+# -- Refreshing module comb_str
+# -- Refreshing module Encoder8x3
+# -- Refreshing module mux2x1
+# -- Refreshing module mux4x1
+# -- Refreshing module tb_Encoder8x3
+# -- Refreshing module tb_mux2x1
+# -- Refreshing module tb_mux4x1
+# -- Refreshing module wavgen
+# End time: 12:33:40 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -work E:/CourseProject/DSD_Project/work -refresh -force_refresh
+# Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 12:33:41 on Nov 22,2018
+# vcom -reportprogress 300 -work E:/CourseProject/DSD_Project/work -refresh -force_refresh 
+# -- Skipping module comb_str
+# -- Skipping module Encoder8x3
+# -- Skipping module mux2x1
+# -- Skipping module mux4x1
+# -- Skipping module tb_Encoder8x3
+# -- Skipping module tb_mux2x1
+# -- Skipping module tb_mux4x1
+# -- Skipping module wavgen
+# End time: 12:33:41 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_dataflow.v failed with 5 errors.
+# Compile of comb_dataflow.v was successful.
+# Compile of comb_behavior.v failed with 5 errors.
+# Compile of comb_behavior.v was successful.
+# Compile of comb_dataflow.v was successful.
+# Compile of testbench_comb.v failed with 5 errors.
+# Compile of testbench_comb.v failed with 3 errors.
+# Compile of testbench_comb.v was successful.
+vsim work.testbench_comb
+# vsim 
+# Start time: 12:41:29 on Nov 22,2018
+# Loading work.testbench_comb
+# Loading work.comb_str
+# Loading work.comb_dataflow
+# Loading work.comb_behavior
+add wave -position insertpoint  \
+sim:/testbench_comb/A \
+sim:/testbench_comb/B \
+sim:/testbench_comb/C \
+sim:/testbench_comb/D \
+sim:/testbench_comb/str \
+sim:/testbench_comb/dataflow \
+sim:/testbench_comb/behavior
+run 500
+#                    0	DCBA = 0000	str = 0	dataflow = 0	behavior = 0	
+#                    5	DCBA = 0001	str = 0	dataflow = 0	behavior = 0	
+#                   10	DCBA = 0010	str = 0	dataflow = 0	behavior = 0	
+#                   15	DCBA = 0011	str = 0	dataflow = 0	behavior = 0	
+#                   20	DCBA = 0100	str = 0	dataflow = 0	behavior = 0	
+#                   25	DCBA = 0101	str = 0	dataflow = 0	behavior = 0	
+#                   30	DCBA = 0110	str = 1	dataflow = 1	behavior = 1	
+#                   35	DCBA = 0111	str = 0	dataflow = 0	behavior = 0	
+#                   40	DCBA = 1000	str = 0	dataflow = 0	behavior = 0	
+#                   45	DCBA = 1001	str = 0	dataflow = 0	behavior = 0	
+run 500
+#                   50	DCBA = 1010	str = 0	dataflow = 0	behavior = 0	
+#                   55	DCBA = 1011	str = 0	dataflow = 0	behavior = 0	
+#                   60	DCBA = 1100	str = 0	dataflow = 0	behavior = 0	
+#                   65	DCBA = 1101	str = 0	dataflow = 0	behavior = 0	
+#                   70	DCBA = 1110	str = 0	dataflow = 0	behavior = 0	
+#                   75	DCBA = 1111	str = 0	dataflow = 0	behavior = 0	
+#                   80	DCBA = 0000	str = 0	dataflow = 0	behavior = 0	
+#                   85	DCBA = 0001	str = 0	dataflow = 0	behavior = 0	
+#                   90	DCBA = 0010	str = 0	dataflow = 0	behavior = 0	
+#                   95	DCBA = 0011	str = 0	dataflow = 0	behavior = 0	
+# Compile of testbench_comb.v failed with 1 errors.
+# Compile of comb_prim.v failed with 1 errors.
+# Compile of comb_prim.v was successful.
+# Compile of testbench_comb.v was successful.
+vsim work.testbench_comb
+# vsim 
+# Start time: 12:53:13 on Nov 22,2018
+# Loading work.testbench_comb
+# Loading work.comb_str
+# Loading work.comb_dataflow
+# Loading work.comb_behavior
+# Loading work.comb_prim
+run 800
+#                    0	DCBA = 0000	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                    5	DCBA = 0001	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   10	DCBA = 0010	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   15	DCBA = 0011	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   20	DCBA = 0100	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   25	DCBA = 0101	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   30	DCBA = 0110	str = 1	dataflow = 1	behavior = 1	prim = 1
+#                   35	DCBA = 0111	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   40	DCBA = 1000	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   45	DCBA = 1001	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   50	DCBA = 1010	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   55	DCBA = 1011	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   60	DCBA = 1100	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   65	DCBA = 1101	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   70	DCBA = 1110	str = 0	dataflow = 0	behavior = 0	prim = 0
+#                   75	DCBA = 1111	str = 0	dataflow = 0	behavior = 0	prim = 0
+# Compile of comb_Y2.v was successful.
+# Compile of tb_comb_Y2.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_comb_Y2
+# vsim 
+# Start time: 13:24:04 on Nov 22,2018
+# Loading work.tb_comb_Y2
+# Loading work.comb_Y2
+# ** Warning: (vsim-3017) E:/CourseProject/DSD_Project/5/tb_comb_Y2.v(15): [TFMPC] - Too few port connections. Expected 5, found 3.
+#    Time: 0 ns  Iteration: 0  Instance: /tb_comb_Y2/Y2 File: E:/CourseProject/DSD_Project/5/comb_Y2.v
+# ** Warning: (vsim-3722) E:/CourseProject/DSD_Project/5/tb_comb_Y2.v(15): [TFMPC] - Missing connection for port 'C'.
+# ** Warning: (vsim-3722) E:/CourseProject/DSD_Project/5/tb_comb_Y2.v(15): [TFMPC] - Missing connection for port 'D'.
+add wave -position insertpoint  \
+sim:/tb_comb_Y2/A \
+sim:/tb_comb_Y2/B \
+sim:/tb_comb_Y2/C \
+sim:/tb_comb_Y2/D \
+sim:/tb_comb_Y2/Y \
+sim:/tb_comb_Y2/dout \
+sim:/tb_comb_Y2/sel \
+sim:/tb_comb_Y2/din
+run 820
+#                    0	ABCD = 0000	 0	Y2 = z
+#                    5	ABCD = 0001	 1	Y2 = z
+#                   10	ABCD = 0010	 2	Y2 = z
+#                   15	ABCD = 0011	 3	Y2 = z
+#                   20	ABCD = 0100	 4	Y2 = z
+#                   25	ABCD = 0101	 5	Y2 = z
+#                   30	ABCD = 0110	 6	Y2 = z
+#                   35	ABCD = 0111	 7	Y2 = z
+#                   40	ABCD = 1000	 8	Y2 = z
+#                   45	ABCD = 1001	 9	Y2 = z
+#                   50	ABCD = 1010	10	Y2 = z
+#                   55	ABCD = 1011	11	Y2 = z
+#                   60	ABCD = 1100	12	Y2 = z
+#                   65	ABCD = 1101	13	Y2 = z
+#                   70	ABCD = 1110	14	Y2 = z
+#                   75	ABCD = 1111	15	Y2 = z
+#                   80	ABCD = 0000	 0	Y2 = z
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/5/tb_comb_Y2.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 13:24:45 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/5/tb_comb_Y2.v 
+# -- Compiling module comb_Y2
+# -- Compiling module tb_comb_Y2
+# 
+# Top level modules:
+# 	tb_comb_Y2
+# End time: 13:24:45 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_comb_Y2
+# vsim 
+# Start time: 13:24:49 on Nov 22,2018
+# Loading work.tb_comb_Y2
+# Loading work.comb_Y2
+run 820
+#                    0	ABCD = 0000	 0	Y2 = 0
+#                    5	ABCD = 0001	 1	Y2 = 0
+#                   10	ABCD = 0010	 2	Y2 = 0
+#                   15	ABCD = 0011	 3	Y2 = 0
+#                   20	ABCD = 0100	 4	Y2 = 1
+#                   25	ABCD = 0101	 5	Y2 = 1
+#                   30	ABCD = 0110	 6	Y2 = 1
+#                   35	ABCD = 0111	 7	Y2 = 1
+#                   40	ABCD = 1000	 8	Y2 = 0
+#                   45	ABCD = 1001	 9	Y2 = 0
+#                   50	ABCD = 1010	10	Y2 = 0
+#                   55	ABCD = 1011	11	Y2 = 1
+#                   60	ABCD = 1100	12	Y2 = 1
+#                   65	ABCD = 1101	13	Y2 = 1
+#                   70	ABCD = 1110	14	Y2 = 0
+#                   75	ABCD = 1111	15	Y2 = 0
+#                   80	ABCD = 0000	 0	Y2 = 0
+# Compile of comb_Y1.v was successful.
+# Compile of comb_Y2.v was successful.
+# Compile of tb_comb_Y1.v was successful.
+# Compile of tb_comb_Y2.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim work.tb_comb_Y1
+# vsim 
+# Start time: 13:25:58 on Nov 22,2018
+# Loading work.tb_comb_Y1
+# Loading work.comb_Y1
+add wave -position insertpoint sim:/tb_comb_Y1/*
+run 500
+#                    0	ABCD = 000	0	Y2 = 1
+#                    5	ABCD = 001	1	Y2 = 1
+#                   10	ABCD = 010	2	Y2 = 0
+#                   15	ABCD = 011	3	Y2 = 0
+#                   20	ABCD = 100	4	Y2 = 1
+#                   25	ABCD = 101	5	Y2 = 1
+#                   30	ABCD = 110	6	Y2 = 0
+#                   35	ABCD = 111	7	Y2 = 0
+#                   40	ABCD = 000	0	Y2 = 1
+#                   45	ABCD = 001	1	Y2 = 1
+vlog -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/5/comb_Y1.v
+# Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+# Start time: 13:27:36 on Nov 22,2018
+# vlog -reportprogress 300 -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0 E:/CourseProject/DSD_Project/5/comb_Y1.v 
+# -- Compiling module comb_Y1
+# 
+# Top level modules:
+# 	comb_Y1
+# End time: 13:27:36 on Nov 22,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.tb_comb_Y1
+# vsim 
+# Start time: 13:27:41 on Nov 22,2018
+# Loading work.tb_comb_Y1
+# Loading work.comb_Y1
+add wave -position insertpoint  \
+sim:/tb_comb_Y1/A \
+sim:/tb_comb_Y1/B \
+sim:/tb_comb_Y1/C \
+sim:/tb_comb_Y1/Y
+run 500
+#                    0	ABCD = 000	0	Y2 = 0
+#                    5	ABCD = 001	1	Y2 = 1
+#                   10	ABCD = 010	2	Y2 = 1
+#                   15	ABCD = 011	3	Y2 = 0
+#                   20	ABCD = 100	4	Y2 = 1
+#                   25	ABCD = 101	5	Y2 = 1
+#                   30	ABCD = 110	6	Y2 = 0
+#                   35	ABCD = 111	7	Y2 = 0
+#                   40	ABCD = 000	0	Y2 = 0
+#                   45	ABCD = 001	1	Y2 = 1
+# Compile of ones_count.v was successful.
+# Compile of tb_ones_count.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.tb_ones_count
+# vsim 
+# Start time: 13:35:29 on Nov 22,2018
+# Loading work.tb_ones_count
+# Loading work.ones_count
+add wave -position insertpoint  \
+sim:/tb_ones_count/data \
+sim:/tb_ones_count/count \
+sim:/tb_ones_count/mask
+run 500
+#                    0	data = 00000000	count = 0000	 0
+#                    5	data = 00000001	count = 0001	 1
+#                   10	data = 00000011	count = 0010	 2
+#                   15	data = 00000111	count = 0011	 3
+#                   20	data = 00001111	count = 0100	 4
+#                   25	data = 00011111	count = 0101	 5
+#                   30	data = 00111111	count = 0110	 6
+#                   35	data = 01111111	count = 0111	 7
+#                   40	data = 11111111	count = 1000	 8
+# End time: 13:49:20 on Nov 22,2018, Elapsed time: 0:13:51
+# Errors: 0, Warnings: 0
