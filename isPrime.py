@@ -21,7 +21,7 @@ def isPrime(n, t=2):
 
 
 def main():
-    print(isPrime(11))
+    print(isPrime(37))
 
 
 if __name__ == '__main__':

@@ -9,6 +9,7 @@
 # | 4    |      |      |      |      |      |      |
 # | 5    |      |      |      |      |      |      |
 # '''
+from GCD import isCoprime
 
 
 def SumTable(mod, *cusfield):
@@ -63,9 +64,9 @@ def mdWriter(string):
 
 
 if __name__ == '__main__':
-    mdWriter(TableRender(range(0, 6), SumTable(6), 'Z/6Z: +'))
-    mdWriter(TableRender(range(0, 6), ProTable(6), 'Z/6Z: *'))
-    mdWriter(TableRender(range(0, 5), SumTable(5), 'Z/5Z: +'))
-    mdWriter(TableRender(range(0, 5), ProTable(5), 'Z/5Z: *'))
-    mdWriter(TableRender(range(0, 18), SumTable(18), 'Z/18Z: +'))
-    mdWriter(TableRender(range(0, 18), ProTable(18), 'Z/18Z: *'))
+    F21 = list(filter(lambda x: isCoprime(x, 21), range(0, 21)))
+    F37 = list(filter(lambda x: isCoprime(x, 37), range(0, 37)))
+
+    mdWriter(TableRender(F21, ProTable(21, F21), '21'))
+    mdWriter(TableRender(F37, ProTable(37, F37), '37'))
+    # # mdWriter(TableRender(range(0, 37), ProTable(37), 'Z/37Z: *'))
