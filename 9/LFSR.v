@@ -10,11 +10,20 @@ module LFSR(
 
 always @(posedge clk) begin
 	if (!rst_n) begin
-		q <= 0;
+		q <= 26'b0;
 	end else if (load) begin
-		q <= din;
+		q <= (|din) ? din : 26'b1;
 	end	else begin
-		q <= {q[26] ^ q[8] ^ q[7] ^ q[1], q[1:25]};
+		if (q == 26'b0) begin
+			q =  26'b1;
+		end else begin
+			q[10:26] <= q[9:25];
+			q[9] <= q[8]^q[26];
+			q[8] <= q[7]^q[26];
+			q[3:7] <= q[2:6];
+			q[2] <= q[1]^q[26];
+			q[1] <= q[26];
+		end
 	end
 end
 

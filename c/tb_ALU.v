@@ -21,6 +21,9 @@ end
 ALU alu(c_out, sum, oper, a, b, c_in);
 
 initial
-	$monitor($time, "\t%b\t%8b(%d)\t%d\t%8b(%d)\t%b\t%8b", c_in, a, a, oper, b, b, c_out, sum);
+	$monitor(
+		$time, "\t%b\t%8b(%d)\t%d\t%8b(%d)\t%b\t%8b(%d)",
+		c_in, a, a, oper, b, b, c_out, sum, sum
+	);
 
 endmodule

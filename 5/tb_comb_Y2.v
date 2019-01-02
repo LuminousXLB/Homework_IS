@@ -15,6 +15,9 @@ end
 comb_Y2 Y2(Y, A, B, C, D);
 
 initial
-	$monitor($time, "\tABCD = %4b\t%d\tY2 = %b", {A, B, C, D}, {A, B, C, D}, Y);
+	$monitor(
+		$time, "\tABCD = %4b\t%d\tY2 = %b",
+		{A, B, C, D}, {A, B, C, D}, Y
+	);
 
 endmodule

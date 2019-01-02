@@ -1,5 +1,6 @@
 `timescale 10 ns / 1 ns
-`include "sram.v"
+// `include "sram.v"
+`include "newSram.v"
 
 module tb_sram();
 
@@ -35,6 +36,6 @@ end
 sram sr(dout, din, addr, wr, rd, cs);
 
 initial
-	$monitor($time, "\taddr = %d, din = %8b, dout = %8b", addr, din, dout);
+	$monitor($time, "\taddr = %d, wr = %b, rd = %b, din = %8b, dout = %8b", addr, wr, rd, din, dout);
 
 endmodule

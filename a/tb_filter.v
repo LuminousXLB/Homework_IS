@@ -5,6 +5,7 @@ module tb_filter();
 
 wire sig_out;
 reg clock, reset, sig_in;
+reg [15:0] data;
 
 initial begin
 	clock = 1'b0;
@@ -19,24 +20,11 @@ initial begin
 end
 
 initial begin
+	data = 16'b0001_1101_0111_1101;
 	sig_in = 1'b0;
 	#2 sig_in = 1'b1;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b0;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b0;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b0;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b1;
-	#10 sig_in = 1'b0;
-	#10 sig_in = 1'b0;
-	#10 sig_in = 1'b0;
+	forever
+		#10 {data, sig_in} = {sig_in, data};
 end
 
 filter ftr(sig_out, clock, reset, sig_in);

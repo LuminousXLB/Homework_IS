@@ -15,6 +15,6 @@ end
 comb_Y1 Y1(Y, A, B, C);
 
 initial
-	$monitor($time, "\tABCD = %3b\t%d\tY1 = %b", {A, B, C}, {A, B, C}, Y);
+	$monitor($time, "\tABC = %3b\t%d\tY1 = %b", {A, B, C}, {A, B, C}, Y);
 
 endmodule

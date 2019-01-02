@@ -15,6 +15,9 @@ end
 comb_str comb(Y, sel, A, B, C, D);
 
 initial
-	$monitor($time, "\tsel = %b\tAB = %2b\tCD = %2b\tY = %b", sel, {A, B}, {C, D}, Y);
+	$monitor(
+		$time, "\tsel = %b\tAB = %2b\tCD = %2b\tY = %b",
+		sel, {A, B}, {C, D}, Y
+	);
 
 endmodule

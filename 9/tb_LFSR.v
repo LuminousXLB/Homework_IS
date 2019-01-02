@@ -31,5 +31,4 @@ LFSR lsfr(q, clk, rst_n, load, din);
 initial
 	$monitor($time, "\tq = %26b", q);
 
-
 endmodule

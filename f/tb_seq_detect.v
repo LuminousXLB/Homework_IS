@@ -7,7 +7,8 @@ wire flag;
 reg clk;
 reg rst_n;
 
-reg [3:0] buffer;
+reg [2:0] buffer;
+reg din;
 
 initial begin
 	clk = 1'b0;
@@ -22,23 +23,19 @@ initial begin
 end
 
 initial begin
-	buffer = 4'bxxx1;
-	#12 buffer = 4'bxx10;
-	#10 buffer = 4'bx101;
-	#10 buffer = 4'b1011;
-	#10 buffer = 4'b0110;
-	#10 buffer = 4'b1101;
-	#10 buffer = 4'b1011;
-	#10 buffer = 4'b0111;
-	#10 buffer = 4'b1110;
-	#10 buffer = 4'b1101;
-	#10 buffer = 4'b1010;
+	{buffer, din} = 4'bxxx1;
+	#12 {buffer, din} = 4'bxx10;
+	#10 {buffer, din} = 4'bx101;
+	#10 {buffer, din} = 4'b1011;
+	#10 {buffer, din} = 4'b0110;
+	#10 {buffer, din} = 4'b1101;
+	#10 {buffer, din} = 4'b1011;
+	#10 {buffer, din} = 4'b0111;
+	#10 {buffer, din} = 4'b1110;
+	#10 {buffer, din} = 4'b1101;
+	#10 {buffer, din} = 4'b1010;
 end
 
-seq_detect dectect(flag, buffer[0], clk, rst_n);
-
-always @(flag) begin
-	$display($time, "\tbuffer = %4b, flag = %b", buffer, flag);
-end
+seq_detect dectect(flag, din, clk, rst_n);
 
 endmodule
