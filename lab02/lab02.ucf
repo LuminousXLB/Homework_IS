@@ -1,0 +1,25 @@
+# ==== Discrete LEDs (LED) ====
+# These are shared connections with the FX2 connector
+NET "LED<0>"  LOC = "F12" | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+NET "LED<1>"  LOC = "E12" | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+NET "LED<2>"  LOC = "E11" | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+NET "LED<3>"  LOC = "F11" | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+NET "LED<4>"  LOC = "C11" | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+NET "LED<5>"  LOC = "D11" | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+NET "LED<6>"  LOC = "E9"  | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+NET "LED<7>"  LOC = "F9"  | IOSTANDARD = LVTTL  | SLEW = SLOW  | DRIVE = 8 ; 
+
+# ==== Slide Switches (SW) ====
+# SW<3>
+NET "SW3"  LOC = "N17" | IOSTANDARD = LVTTL | PULLUP ; 
+
+# ==== Rotary Pushbutton Switch (ROT) ====
+NET "ROT_A"      LOC = "K18" | IOSTANDARD = LVTTL  | PULLUP ; 
+NET "ROT_B"      LOC = "G18" | IOSTANDARD = LVTTL  | PULLUP ; 
+# ROT_CENTER
+NET "RST" LOC = "V16" | IOSTANDARD = LVTTL  | PULLDOWN ; 
+
+# ==== Clock inputs (CLK) ====
+NET "CLK_50MHZ" LOC = "C9"  | IOSTANDARD = LVCMOS33 ; 
+#      Define clock period for 50 MHz oscillator (40%/60% duty-cycle)
+NET "CLK_50MHZ" PERIOD = 20.0ns HIGH 40%;
