@@ -22,7 +22,7 @@
 `include "clock_divisor.v"
 `include "char_selector.v"
 
-module lab03draft (
+module lab03 (
            output LCD_E,
            output LCD_RS,
            output LCD_RW,
