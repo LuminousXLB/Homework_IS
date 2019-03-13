@@ -23,16 +23,16 @@ module clock_divisor(
            input clk
        );
 
-reg [31:0]counter = 32'b0;
+reg [24:0]counter = 25'b0;
 always @(posedge clk) begin
-    if (counter == 32'd25_000_000) begin
-        counter <= 32'b0;
+    if (counter == 25'd24_999_999) begin
+        counter <= 25'b0;
     end
     else
         counter <= counter + 1;
 end
 
-assign count_enable = (counter == 32'b0);
+assign count_enable = (counter == 25'b0);
 
 reg out_buf = 1'b0;
 always @(posedge clk) begin
