@@ -1,0 +1,17 @@
+# ==== Discrete LEDs (LED) ====
+# These are shared connections with the FX2 connector
+NET "LED<2>" LOC = "E11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "LED<3>" LOC = "F11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "LED<4>" LOC = "C11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "LED<5>" LOC = "D11" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "LED<6>" LOC = "E9" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+NET "LED<7>" LOC = "F9" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ;
+
+# ==== Clock inputs (CLK) ====
+NET "CLK_50MHZ" LOC = "C9" | IOSTANDARD = LVCMOS33 ;
+# Define clock period for 50 MHz oscillator (40%/60% duty-cycle)
+NET "CLK_50MHZ" PERIOD = 20.0ns HIGH 40%;
+
+# ==== Slide Switches (SW) ====
+NET "SW<0>" LOC = "L13" | IOSTANDARD = LVTTL | PULLUP ;
+NET "SW<1>" LOC = "L14" | IOSTANDARD = LVTTL | PULLUP ;
