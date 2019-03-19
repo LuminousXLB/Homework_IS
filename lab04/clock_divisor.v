@@ -1,21 +1,21 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    09:37:05 03/14/2019 
-// Design Name: 
-// Module Name:    clock_divisor 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
+// Company:
+// Engineer:
 //
-// Dependencies: 
+// Create Date:    00:22:42 03/14/2019
+// Design Name:
+// Module Name:    clock_divisor
+// Project Name:
+// Target Devices:
+// Tool versions:
+// Description:
 //
-// Revision: 
+// Dependencies:
+//
+// Revision:
 // Revision 0.01 - File Created
-// Additional Comments: 
+// Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
 module clock_divisor(
@@ -25,14 +25,10 @@ module clock_divisor(
 
 reg [10:0] count = 11'b0;
 always @(posedge clock) begin
-    if (count == 11'd1039)
-        count <= 11'b0;
-    else
-        count <= count + 1;
+    count <= count + 1;
 end
 
-assign count_enable = count == 11'b0;
-
+assign count_enable = &count;
 reg clkout_buf = 1'b0;
 always @(posedge clock) begin
     if(count_enable)

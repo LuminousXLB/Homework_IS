@@ -18,19 +18,22 @@
 // Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
-`include "LCD_4bits_interface.v"
-`include "clock_divisor.v"
-`include "char_selector.v"
+// `include "LCD_4bits_interface.v"
+// `include "clock_divisor.v"
+// `include "char_selector.v"
 
 module lab04 (
            output LCD_E,
            output LCD_RS,
            output LCD_RW,
            output [11:8] SF_D,
+           output LED,
            input CLK_50MHZ,
            input BTN_WEST,
-           input SW3
+           input SW2
        );
+
+assign LED = SW2;
 
 wire clock;
 clock_divisor clock_divisor (
@@ -46,18 +49,17 @@ parameter CLEARDISPLAY = 11'b1_00_0000_0001;
 parameter PAUSE        = 11'b0_11_1111_1111;
 reg [10:0] en_rs_rw_data;
 reg init;
-reg [5:0]  count;
 
 wire [7:0] char;
-wire [6:0] address;
-assign address = {count[4], 2'b00, count[3:0]};
+reg  [6:0] address;
 char_selector char_selector (
                   .char(char),
                   .address(address),
                   .CLK_50MHZ(CLK_50MHZ),
-                  .SW3(SW3)
+                  .SW2(SW2)
               );
 
+reg [4:0] count;
 always @(posedge clock) begin
     if (BTN_WEST) begin
         init <= 1'b1;
@@ -75,13 +77,13 @@ always @(posedge clock) begin
                 en_rs_rw_data <= CLEARDISPLAY;
             CLEARDISPLAY: begin
                 en_rs_rw_data <= PAUSE;
-                count <= 6'd0;
+                count <= 5'd0;
             end
             PAUSE: begin
                 en_rs_rw_data <= PAUSE;
-                if (count == 6'd39) begin
+                if (count == 5'd20) begin
                     init <= 1'b0;
-                    count <= 6'b11_0000;
+                    count <= 5'b0_0000;
                 end
                 else begin
                     count <= count + 1;
@@ -92,20 +94,24 @@ always @(posedge clock) begin
         endcase
     end
     else begin
-        case (count[5:4])
-            2'b11: begin
+        case (count)
+            6'b0_0000: begin
                 en_rs_rw_data <= {3'b100, 1'b1, 7'h00};
-                count <= 6'b00_0000;
+                address <= {count[4], 2'b00, count[3:0]};
+                count <= count + 1;
             end
-            2'b01: begin
+            6'b1_0000: begin
                 en_rs_rw_data <= {3'b100, 1'b1, 7'h40};
-                count <= 6'b10_0000;
+                address <= {count[4], 2'b00, count[3:0]};
+                count <= count + 1;
             end
             default: begin
+                address <= {count[4], 2'b00, count[3:0]};
                 en_rs_rw_data <= {3'b110, char};
                 count <= count + 1;
             end
         endcase
+
     end
 end
 
@@ -115,7 +121,7 @@ wire o_rw;
 wire [7:0] o_data;
 
 assign {o_enable, o_rs, o_rw, o_data} = en_rs_rw_data;
-assign o_reset = ~o_enable;
+assign o_reset = ~(o_enable & clock);
 
 LCD_4bits_interface LCD_4bits_interface (
                         .LCD_E(LCD_E),

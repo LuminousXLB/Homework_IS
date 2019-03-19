@@ -18,20 +18,18 @@
 // Additional Comments:
 //
 //////////////////////////////////////////////////////////////////////////////////
-`include "stop_watch.v"
-
 module char_selector(
            output reg [7:0] char,
            input [6:0] address,
            input CLK_50MHZ,
-           input SW3
+           input SW2
        );
 
 wire [19:0] bcd_time;
 stop_watch stop_watch (
                .bcd_time(bcd_time),
                .CLK_50MHZ(CLK_50MHZ),
-               .reset(SW3)
+               .reset(SW2)
            );
 
 parameter [0:127] line0 = "  Stopwatch     ";
