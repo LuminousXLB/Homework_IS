@@ -24,7 +24,7 @@ module char_selector(
        );
 
 wire [0:127] memory;
-assign memory = (!address[6]) ? " Hello, world!  ": " Spartan-3E LCD ";
+assign memory = (!address[6]) ? "Spartan-3E FPGA ": "FPGA Starter    ";
 
 always @(*) begin
     case(address[5:0])
